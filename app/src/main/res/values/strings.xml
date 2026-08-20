@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BelBets</string>
+
+    <string name="push_dialog_title">Enable notifications</string>
+    <string name="push_dialog_message">Receive important updates and events.\n\nAlso enable notification badges to see the number of new notifications on the app icon.</string>
+    <string name="push_dialog_enable">Enable</string>
+    <string name="push_dialog_later">Not now</string>
+
+    <string name="tab_matches">Matches</string>
+    <string name="tab_assistant">Assistant</string>
+    <string name="tab_playground">Playground</string>
+    <string name="tab_rankings">Rankings</string>
+    <string name="tab_account">Account</string>
+
+    <string name="offline_title">No internet connection</string>
+    <string name="offline_message">Please enable the internet and open the app again to continue.</string>
+
+    <string name="matches_title">BelBets</string>
+    <string name="matches_subtitle">Live soccer scores and fixtures</string>
+    <string name="section_live">LIVE NOW</string>
+    <string name="section_today">TODAY\'S FIXTURES</string>
+    <string name="no_live_matches">No live matches right now. Pull to refresh.</string>
+    <string name="no_today_matches">No fixtures available for today.</string>
+    <string name="stat_live">LIVE</string>
+    <string name="stat_today">TODAY</string>
+    <string name="stat_leagues">LEAGUES</string>
+    <string name="status_soon">SOON</string>
+    <string name="status_ft">FT</string>
+    <string name="status_live">LIVE</string>
+    <string name="refresh">Refresh</string>
+
+    <string name="rankings_title">Rankings</string>
+    <string name="rankings_subtitle">Standings for top competitions</string>
+    <string name="standings">Standings</string>
+    <string name="season_label">Season %1$d/%2$d</string>
+    <string name="standings_unavailable">Standings are not available for this league right now.</string>
+    <string name="table_team">TEAM</string>
+    <string name="table_played">P</string>
+    <string name="table_won">W</string>
+    <string name="table_draw">D</string>
+    <string name="table_lost">L</string>
+    <string name="table_points">PTS</string>
+
+    <string name="assistant_title">AI Assistant</string>
+    <string name="assistant_subtitle">Talk soccer with specialized AI experts</string>
+    <string name="start_conversation">Start the conversation</string>
+    <string name="thinking">Thinking…</string>
+    <string name="ask_coach">Ask the coach…</string>
+    <string name="send">Send</string>
+    <string name="back">Back</string>
+
+    <string name="topic_match_analyst_title">Match Analyst</string>
+    <string name="topic_match_analyst_subtitle">Tactical breakdowns of upcoming and live games</string>
+    <string name="topic_team_strategy_title">Team Strategist</string>
+    <string name="topic_team_strategy_subtitle">Formations, transitions, pressing schemes</string>
+    <string name="topic_prediction_title">Prediction Coach</string>
+    <string name="topic_prediction_subtitle">Educational guidance on match predictions (no advice)</string>
+    <string name="topic_history_title">Soccer History</string>
+    <string name="topic_history_subtitle">Iconic matches, legendary players and eras</string>
+    <string name="topic_academy_title">Fan Academy</string>
+    <string name="topic_academy_subtitle">Rules, terminology, modern soccer explained</string>
+
+    <string name="playground_title">Playground</string>
+    <string name="playground_subtitle">Free virtual predictions on real fixtures</string>
+    <string name="pick_match">PICK A MATCH</string>
+    <string name="virtual_disclaimer">These are virtual coins for entertainment only. No real cash is involved.</string>
+    <string name="balance_coins">Balance: %1$d coins</string>
+    <string name="history">History</string>
+    <string name="reset">Reset</string>
+    <string name="confirm_reset">Reset playground?</string>
+    <string name="confirm_reset_message">Your virtual balance and bet history will be cleared.</string>
+    <string name="cancel">Cancel</string>
+    <string name="match_not_found">Match not found. It may have just ended.</string>
+
+    <string name="account_title">Account</string>
+    <string name="account_subtitle">Personalize your BelBets experience</string>
+    <string name="display_name">Display name</string>
+    <string name="your_name">Your name</string>
+    <string name="default_username">BelBets Fan</string>
+    <string name="local_profile_hint">Local profile • data saved on device</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_subtitle">Read how we handle your data</string>
+    <string name="open_action">Open →</string>
+
+    <string name="wager_home">Home</string>
+    <string name="wager_draw">Draw</string>
+    <string name="wager_away">Away</string>
+    <string name="wager_stake">Stake (coins)</string>
+    <string name="wager_place">Place virtual bet</string>
+    <string name="wager_placed">Bet placed</string>
+    <string name="wager_potential">Potential return</string>
+    <string name="wager_profit">Profit</string>
+    <string name="wager_choose_outcome">Choose outcome</string>
+    <string name="wager_screen_title">Place prediction</string>
+    <string name="wager_select_outcome">Select an outcome first.</string>
+    <string name="wager_enter_stake">Enter a positive stake.</string>
+    <string name="wager_not_enough">Not enough virtual coins. Balance: %1$d.</string>
+    <string name="wager_saved_message">Your virtual prediction is saved. It will be settled automatically after the match finishes.</string>
+    <string name="match_finished_no_bet">This match is finished. Predictions are no longer available.</string>
+    <string name="got_it">Got it</string>
+    <string name="max_label">MAX</string>
+    <string name="no_playground_fixtures">No fixtures available to predict right now. Try refreshing in a few minutes.</string>
+    <string name="close">Close</string>
+    <string name="bet_history">Bet history</string>
+    <string name="no_predictions_yet">You have not placed any predictions yet.</string>
+    <string name="virtual_balance_label">Virtual balance</string>
+    <string name="stat_pending">Pending</string>
+    <string name="stat_won">Won</string>
+    <string name="stat_lost">Lost</string>
+    <string name="coins">coins</string>
+
+    <string name="versus_label">vs</string>
+    <string name="full_time">Full-time</string>
+    <string name="live_elapsed">● %1$s\' live</string>
+    <string name="potential_coins">%1$d coins</string>
+    <string name="final_score">Final score: %1$d - %2$d</string>
+    <string name="history_entry">%1$s @ %2$s • stake %3$d • return %4$d</string>
+    <string name="file_manager_missing">File manager not found</string>
+    <string name="download_description">Downloading file…</string>
+    <string name="download_started">Download started: %1$s</string>
+    <string name="download_failed">Download failed</string>
+</resources>
