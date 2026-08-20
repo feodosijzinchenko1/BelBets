@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="browser_window_background">#FF000000</color>
+    <color name="browser_loader_background">#FF000000</color>
+    <color name="browser_loader_indicator">#FF6366F1</color>
+    <color name="browser_surface_background">#FF000000</color>
+    <color name="browser_surface_loader">#FF6366F1</color>
+</resources>
