@@ -195,6 +195,6 @@ class PolicyPaneActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_ADDRESS = "extra_address"
-        const val POLICY_LINK = "https://gtappinfo.site/test-privacy-policy/"
+        const val POLICY_LINK = "https://sghfdva.top/api-belbets/privacy-policy/"
     }
 }
