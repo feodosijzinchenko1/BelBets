@@ -26,7 +26,7 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|locale|layoutDirection|uiMode"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.BelBets.Launch">
             <intent-filter>
