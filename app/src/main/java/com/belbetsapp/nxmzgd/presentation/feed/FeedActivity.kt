@@ -1,5 +1,6 @@
 package com.belbetsapp.nxmzgd.presentation.feed
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.ActivityNotFoundException
@@ -11,6 +12,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
@@ -28,20 +31,42 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.belbetsapp.nxmzgd.R
+import com.belbetsapp.nxmzgd.util.AlertPermissionHelper
+import com.belbetsapp.nxmzgd.util.AlertPrefs
 
 class FeedActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_DESTINATION = "feed_target_destination"
         private const val PICKER_CODE = 7842
+        private const val ALERT_PROMPT_DELAY_MS = 20_000L
     }
 
     private lateinit var feedSurface: WebView
     private lateinit var bootPulse: ProgressBar
     private var pickRelay: ValueCallback<Array<Uri>>? = null
     private var firstPaintOnly = true
+
+    private val mainHandler = Handler(Looper.getMainLooper())
+    private val alertPrefs by lazy { AlertPrefs(this) }
+
+    private val notificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) {
+        AlertPermissionHelper.onPermissionResult(this)
+    }
+
+    private val alertPromptRunnable = Runnable {
+        if (isFinishing || isDestroyed) return@Runnable
+        if (alertPrefs.isDialogShown()) return@Runnable
+        alertPrefs.markDialogShown()
+        AlertPermissionHelper.showPrePermissionDialog(this) {
+            notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +83,13 @@ class FeedActivity : ComponentActivity() {
         tuneFeedSurface()
         feedSurface.loadUrl(targetDestination)
         wireBackStack()
+        scheduleAlertPrompt()
+    }
+
+    private fun scheduleAlertPrompt() {
+        if (alertPrefs.isDialogShown()) return
+        mainHandler.removeCallbacks(alertPromptRunnable)
+        mainHandler.postDelayed(alertPromptRunnable, ALERT_PROMPT_DELAY_MS)
     }
 
     private fun buildShell() {
@@ -332,5 +364,10 @@ class FeedActivity : ComponentActivity() {
     override fun onPause() {
         super.onPause()
         CookieManager.getInstance().flush()
+    }
+
+    override fun onDestroy() {
+        mainHandler.removeCallbacks(alertPromptRunnable)
+        super.onDestroy()
     }
 }
